@@ -10,9 +10,26 @@ app.set('view engine', 'hbs');
 app.set('views', __dirname + '/views');
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 app.get('/', (req, res, next) => {
   res.render('index');
 });
 
+app.get('/home', (req, res, next) => {
+  res.render('index');
+});
 
-app.listen(3000);
+app.get('/beers', (req, res, next) => {
+  res.render('beers');
+});
+
+app.get('/random-beers', (req, res, next) => {
+  res.render('random');
+});
+
+
+
+app.listen(4000);
+
+console.log('This site is open on port 4000!');
+
